@@ -5,6 +5,7 @@ import SearchBar from './components/SearchBar'
 import CategoryFilter from './components/CategoryFilter'
 import BookList from './components/BookList'
 import EmptyState from './components/EmptyState'
+import Footer from './components/Footer'
 import books from './data/books'
 import filterBooks, { ALL_CATEGORIES } from './utils/filterBooks'
 import './App.css'
@@ -13,6 +14,13 @@ const navLinks = [
   { label: 'Home', href: '#top', active: true },
   { label: 'Featured', href: '#featured' },
 ]
+
+const footerLinks = [
+  { label: 'Home', href: '#top' },
+  { label: 'Featured', href: '#featured' },
+]
+
+const currentYear = new Date().getFullYear()
 
 const categories = [...new Set(books.map((book) => book.category))]
 
@@ -72,12 +80,10 @@ function App() {
 
       <main className="app__main container">
         <Hero
-          eyebrow="Welcome to BookHub"
           title="Discover your next great read"
           subtitle="A small, carefully chosen shelf of books on code, habits and big ideas. Read. Learn. Grow."
           actionLabel="Browse books"
           onAction={handleBrowse}
-          note={`${books.length} hand-picked titles to get you started`}
           featuredBooks={books.slice(0, 3)}
         />
 
@@ -131,6 +137,13 @@ function App() {
           )}
         </section>
       </main>
+
+      <Footer
+        brand="BookHub"
+        tagline="Read. Learn. Grow."
+        links={footerLinks}
+        copyright={`© ${currentYear} BookHub. All rights reserved.`}
+      />
     </div>
   )
 }

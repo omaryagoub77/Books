@@ -10,12 +10,10 @@ function getCoverPosition(index, total) {
 }
 
 function Hero({
-  eyebrow = '',
   title = 'Discover great books',
   subtitle = '',
   actionLabel = 'Browse books',
   onAction,
-  note = '',
   featuredBooks = [],
 }) {
   const covers = featuredBooks.slice(0, 3)
@@ -23,7 +21,6 @@ function Hero({
   return (
     <section className="hero" aria-labelledby="hero-title">
       <div className="hero__content">
-        {eyebrow && <p className="hero__eyebrow">{eyebrow}</p>}
         <h1 className="hero__title" id="hero-title">
           {title}
         </h1>
@@ -31,7 +28,6 @@ function Hero({
         <div className="hero__actions">
           <Button label={actionLabel} onClick={onAction} />
         </div>
-        {note && <p className="hero__note">{note}</p>}
       </div>
 
       {covers.length > 0 && (
@@ -54,12 +50,10 @@ function Hero({
 }
 
 Hero.propTypes = {
-  eyebrow: PropTypes.string,
   title: PropTypes.string,
   subtitle: PropTypes.string,
   actionLabel: PropTypes.string,
   onAction: PropTypes.func,
-  note: PropTypes.string,
   featuredBooks: PropTypes.arrayOf(
     PropTypes.shape({
       id: PropTypes.number,
