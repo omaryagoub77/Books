@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 function Footer({
   brand = 'BookHub',
   tagline = 'Read. Learn. Grow.',
-  links = [],
+ 
   copyright = '',
 }) {
   return (
@@ -16,15 +16,7 @@ function Footer({
           {tagline && <p className="footer__tagline">{tagline}</p>}
         </div>
 
-        {links.length > 0 && (
-          <nav className="footer__links" aria-label="Footer">
-            {links.map(({ label, href }) => (
-              <a key={href} className="footer__link" href={href}>
-                {label}
-              </a>
-            ))}
-          </nav>
-        )}
+    
 
         {copyright && <p className="footer__copyright">{copyright}</p>}
       </div>
