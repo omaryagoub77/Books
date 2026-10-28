@@ -40,7 +40,7 @@ Button.propTypes = {
   children: PropTypes.node,
   onClick: PropTypes.func,
   type: PropTypes.oneOf(['button', 'submit', 'reset']),
-  variant: PropTypes.oneOf(['primary', 'secondary']),
+  variant: PropTypes.oneOf(['primary', 'secondary', 'ghost']),
   size: PropTypes.oneOf(['sm', 'md']),
   fullWidth: PropTypes.bool,
   disabled: PropTypes.bool,
